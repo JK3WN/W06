@@ -1,4 +1,7 @@
-﻿internal class PlaceResourcesInStockpile : IState
+﻿using System.Drawing;
+using UnityEngine;
+
+internal class PlaceResourcesInStockpile : IState
 {
     private readonly Gatherer _gatherer;
 
@@ -16,4 +19,9 @@
     public void OnEnter() { }
 
     public void OnExit() { }
+
+    public UnityEngine.Color GizmoColor()
+    {
+        return UnityEngine.Color.gray;
+    }
 }

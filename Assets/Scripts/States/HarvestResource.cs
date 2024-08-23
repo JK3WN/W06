@@ -35,4 +35,9 @@ internal class HarvestResource : IState
     public void OnExit()
     {
     }
+
+    public Color GizmoColor()
+    {
+        return Color.gray;
+    }
 }

@@ -40,4 +40,9 @@ internal class MoveToSelectedResource : IState
         _navMeshAgent.enabled = false;
         _animator.SetFloat(Speed, 0f);
     }
+
+    public Color GizmoColor()
+    {
+        return Color.gray;
+    }
 }

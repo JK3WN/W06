@@ -62,4 +62,9 @@ public class Flee : IState
         _navMeshAgent.enabled = false;
         _animator.SetBool(FleeHash, false);
     }
+
+    public Color GizmoColor()
+    {
+        return Color.gray;
+    }
 }

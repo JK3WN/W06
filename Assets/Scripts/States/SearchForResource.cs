@@ -26,4 +26,9 @@ public class SearchForResource : IState
 
     public void OnEnter() { }
     public void OnExit() { }
+
+    public Color GizmoColor()
+    {
+        return Color.gray;
+    }
 }

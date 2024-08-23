@@ -12,11 +12,14 @@ public class EnemyShoot : MonoBehaviour
     [Header("Gun")]
     public Vector3 spread = new Vector3(0.06f, 0.06f, 0.06f);
     public TrailRenderer bulletTrail;
+    public int ammo = 30;
     private EnemyReferences enemyReferences;
+    private int currentAmmo;
 
     private void Awake()
     {
         enemyReferences = GetComponent<EnemyReferences>();
+        Reload();
     }
 
     // Start is called before the first frame update
@@ -33,6 +36,10 @@ public class EnemyShoot : MonoBehaviour
 
     public void Shoot()
     {
+        if (ShouldReload())
+        {
+            return;
+        }
         Vector3 direction = GetDirection();
         if(Physics.Raycast(shootPoint.position, direction, out RaycastHit hit, float.MaxValue, layerMask))
         {
@@ -40,7 +47,19 @@ public class EnemyShoot : MonoBehaviour
 
             TrailRenderer trail = Instantiate(bulletTrail, gunPoint.position, Quaternion.identity);
             StartCoroutine(SpawnTrail(trail, hit));
+            currentAmmo -= 1;
         }
+    }
+
+    public bool ShouldReload()
+    {
+        return currentAmmo <= 0;
+    }
+
+    public void Reload()
+    {
+        Debug.Log("Reloaded");
+        currentAmmo = ammo;
     }
 
     private Vector3 GetDirection()
