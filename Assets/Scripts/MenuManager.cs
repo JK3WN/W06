@@ -30,7 +30,7 @@ public class MenuManager : MonoBehaviour
 
     public void OnButton03Pressed()
     {
-
+        SceneManager.LoadScene(3);
     }
 
     public void OnExitPressed()

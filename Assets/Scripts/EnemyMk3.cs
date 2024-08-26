@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyMk2 : MonoBehaviour
+public class EnemyMk3 : MonoBehaviour
 {
     private EnemyReferences enemyReferences;
     private GameObject player;
@@ -26,7 +26,7 @@ public class EnemyMk2 : MonoBehaviour
         // Transitions
         At(runToCover, delayAtferRun, () => runToCover.HasArrivedAtDestination());
         At(delayAtferRun, cover, () => delayAtferRun.IsDone());
-        //At(cover, runToCover, () => FarFromPlayer());
+        At(cover, runToCover, () => FarFromPlayer());
 
         // Start State
         stateMachine.SetState(runToCover);
