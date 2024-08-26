@@ -44,7 +44,7 @@ public class EnemyMk3 : MonoBehaviour
 
     bool FarFromPlayer()
     {
-        if (Vector3.Distance(player.transform.position, enemyReferences.transform.position) >= 8.0f) return true;
+        if (Vector3.Distance(player.transform.position, enemyReferences.transform.position) >= 12.5f) return true;
         else return false;
     }
 

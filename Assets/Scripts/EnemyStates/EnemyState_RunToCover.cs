@@ -16,6 +16,10 @@ public class EnemyState_RunToCover : IState
     public void OnEnter()
     {
         Cover nextCover = this.coverArea.GetRandomCover(enemyReferences.transform.position);
+        while(Vector3.Distance(nextCover.transform.position, enemyReferences.transform.position) < 12.5f)
+        {
+            nextCover = this.coverArea.GetRandomCover(enemyReferences.transform.position);
+        }
         enemyReferences.navMeshAgent.SetDestination(nextCover.transform.position);
     }
 
