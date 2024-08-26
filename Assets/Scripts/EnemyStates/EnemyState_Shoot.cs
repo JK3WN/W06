@@ -35,7 +35,7 @@ public class EnemyState_Shoot : IState
             Quaternion rotation = Quaternion.LookRotation(lookPos);
             enemyReferences.transform.rotation = Quaternion.Slerp(enemyReferences.transform.rotation, rotation, 0.2f);
 
-            // Decide to shoot or hid. For now, shoot first.
+            // Decide to shoot or hide. For now, shoot first.
             enemyReferences.animator.SetBool("Shooting", true);
         }
     }

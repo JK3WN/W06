@@ -18,7 +18,7 @@ public class EnemyMk2 : MonoBehaviour
 
         // States
         var runToCover = new EnemyState_RunToCover(enemyReferences, coverArea);
-        var delayAtferRun = new EnemyState_Delay(2f);
+        var delayAtferRun = new EnemyState_Delay(1f);
         var cover = new EnemyState_Cover(enemyReferences);
 
         // Transitions

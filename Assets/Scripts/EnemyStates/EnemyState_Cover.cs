@@ -15,7 +15,7 @@ public class EnemyState_Cover : IState
 
         // States
         var enemyShoot = new EnemyState_Shoot(enemyReferences);
-        var enemyDelay = new EnemyState_Delay(1f);
+        var enemyDelay = new EnemyState_Delay(0.5f);
         var enemyReload = new EnemyState_Reload(enemyReferences);
 
         // Transitions
